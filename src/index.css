@@ -1,0 +1,267 @@
+@import url('https://fonts.google.com/specimen/Space+Grotesk');
+
+:root {
+  --linear-gradient-active-input-border: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  --red-input-error: hsl(0, 100%, 66%);
+  --neutral-white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  max-width: 1440px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+#main{
+  background: url("./assets/images/bg-main-desktop.png")no-repeat;
+  min-height: 100vh;
+}
+img{
+  max-width: 100%;
+}
+.contents{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem 0;
+}
+/* Card css */
+.card-img{
+  position: relative;
+  max-width: 35rem;
+}
+.card-img-2{
+  position: relative;
+  max-width: 35rem;
+}
+.frnt, 
+.bck
+{
+  max-width: 31.3rem;
+}
+.card-text{
+  position: absolute;
+  top: 1.5rem;
+  padding: 2rem;
+  letter-spacing: 3px;
+  max-width: 23.75rem;
+  color: var(--neutral-white);
+}
+.card-number{
+  margin: 2.5rem 0;
+  font-size: 30px;
+  width: 22rem;
+}
+.name-exp{
+  display: flex;
+  justify-content: space-between;
+}
+.holder-name,
+.exp-date
+{
+  color: var(--light-grayish-violet);
+  font-size: .8rem;
+}
+.exp-date{
+  display: inline-flex;
+}
+.holder-name{
+  text-transform: uppercase;
+  max-width: 18rem;
+  width: 100%;
+}
+
+/* Back of the card */
+.back-card{
+  margin: 2rem 0 0 5rem;
+  position: relative;
+}
+.card-pin{
+  position: absolute;
+  left: 22rem;
+  top: 7rem;
+  color: var(--light-grayish-violet);
+  font-weight: 700;
+}
+
+/* Form styling */
+label {
+  text-transform: uppercase;
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--very-dark-violet);
+}
+.small{
+  font-size: 12px;
+  padding: 2rem 0;
+  color: var(--red-input-error);
+}
+form{
+  max-width: 20rem;
+}
+input{
+  height: 2.3rem;
+  width: 100%;
+  margin: .7rem 0;
+  border-radius: 5px;
+  border: 1px solid var(--light-grayish-violet);
+  outline: 0;
+}
+input:focus{
+  border: 1px solid hsl(278, 94%, 30%);
+}
+input::placeholder{
+  color: var(--light-grayish-violet);
+}
+input[type= "text"]{
+  text-indent: 10px;
+  color: var(--very-dark-violet);
+  font-size: 1rem;
+}
+
+/*  Form flex */
+.form-flex{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.sm-form-input{
+  width: 3.5rem;
+}
+.f2{
+  display: flex;
+  column-gap: 10px;
+}
+/* Link css */
+button{
+  display: block;
+  margin-top: 1rem;
+  padding: .7rem;
+  width: 100%;
+  background-color: var(--very-dark-violet);
+  color: var(--light-grayish-violet);
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-size: .8em;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+/************  Approve card  *****************/
+.ApproveCard{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ApproveCard h2{
+  padding: 1rem 0 ;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--very-dark-violet);
+}
+.ApproveCard p{
+  margin-bottom: 1.5rem;
+  font-size: .8em;
+  letter-spacing: 2px;
+  color: var(--dark-grayish-violet);
+}
+.ApproveCard button{
+  width: 20rem;
+}
+/************  Approve card End *****************/
+
+
+/************ Media query *************************/
+@media (max-width: 54rem){
+  #main{
+    background: url("./assets/images/bg-main-mobile.png")no-repeat;  
+    background-position: top;  
+    background-size: contain;
+  }
+  .contents{
+    justify-content: center;
+    row-gap: 14rem;
+  }
+  label{
+    font-size: .8rem;
+    letter-spacing: 2px;
+  }
+  form{
+    max-width: 30rem;
+    padding: 0 2px;
+  }
+  .front-card {
+    position: absolute;
+    top: 12.8rem;
+    z-index: 2;
+  }
+  .card-text{
+    top: 0;
+  }
+}
+
+@media (max-width: 35rem){
+  .contents{
+    row-gap: 10rem;
+    padding: 0 1rem;
+  }
+  .cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .frnt, .bck {
+    max-width: 18rem;
+  }
+  .card-text {
+    top: 0;
+    padding: 0 1rem;
+  }
+  .card-logo {width: 50px;}
+
+  .card-number{
+    font-size: 12px;
+  }
+  .front-card{
+    top: 9.7rem;
+  }
+  .card-logo{
+    padding: 4px 0 0 0;
+  }
+  .holder-name,
+  .exp-date{
+    font-size: .7rem;
+  }
+  .exp-date{
+    position: absolute;
+    right: 7rem;
+  }
+  .holder-name{
+    width: 13rem;
+  }
+  .card-pin {
+    left: 14rem;
+    top: 4.5rem;
+    font-size: 0.7rem;
+  }
+  .form-flex{
+    gap: 0;
+  }
+}
